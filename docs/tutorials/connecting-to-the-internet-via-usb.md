@@ -199,6 +199,17 @@ If you are using an older version, please upgrade.
         {% include /util/screenshot.html source="/images/windows/10/local-area-connection-properties-sharing.png" %}
 
         {% include /style/icon.html type="info" %}
+        If it says that network sharing is disabled by the network administrator,
+        you must start regedit.exe and navigate to
+        "HKEY_LOCAL_MACHINE\ SYSTEM\ CurrentControlSet\ Services\ SharedAccess"
+        {% include /util/screenshot.html source="/images/windows/10/regedit1.jpg" %}
+        and set the "(Standart)" value to 1.
+        {% include /util/screenshot.html source="/images/windows/10/regedit2.jpg" %}
+        Then close the regestry-editor and close and open the network settings.
+        Now the option should be enabled.
+        {: class="alert alert-info"}
+        
+        {% include /style/icon.html type="info" %}
         If you have more than two network connections, it will ask for a "Home
         networking connection". If you see this, select your EV3's network adapter
         from the list (this will be called *EV3* if you renamed it earlier in the
